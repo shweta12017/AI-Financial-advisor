@@ -1,0 +1,16 @@
+services:
+  # Streamlit Web Service
+  - type: web
+    name: ai-financial-advisor
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
+    healthCheckPath: /
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.0-flash
+        sync: false
+    autoDeploy: true

@@ -1,0 +1,15 @@
+# Ignore local environment files containing secrets
+.env
+
+# Python cache / build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Streamlit cache
+.streamlit/
+
